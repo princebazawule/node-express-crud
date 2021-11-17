@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+    app:
+        build:
+            context: .
+            dockerfile: ./Dockerfile.dev
+        env_file: .env
+        ports:
+            - 3001:3000
+        image: express-app
+        container_name: express-app
+        volumes:
+            - ./src:/usr/app/src
